@@ -40,7 +40,7 @@
     "showEngineeringDNA": true,
     "showContributionStats": true,
     "showRecentActivity": true,
-    "showFeaturedProjects": true,
+    "showFeaturedProjects": false,
     "showTerminalIntro": true,
     "showPhilosophy": false,
     "showArchitecture": false,

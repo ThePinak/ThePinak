@@ -137,45 +137,48 @@ export function renderSections(config, data) {
   const sections = [];
   const settings = config.settings || {};
 
+  let sectionIndex = 1;
+  const getIndex = () => String(sectionIndex++).padStart(2, '0');
+
   // 1. Hero
   sections.push(buildHeroSection(config, data.profile));
 
   // 2. Current Mission
-  sections.push(buildMissionSection(config));
+  sections.push(buildMissionSection(config, getIndex()));
 
   // 3. Terminal Introduction
   if (settings.showTerminalIntro !== false) {
-    sections.push(buildTerminalSection(config, data.featuredProjects));
+    sections.push(buildTerminalSection(config, data.featuredProjects, getIndex()));
   }
 
   // 4. Engineering DNA
   if (settings.showEngineeringDNA !== false) {
-    sections.push(buildEngineeringDnaSection(data.dna));
+    sections.push(buildEngineeringDnaSection(data.dna, getIndex()));
   }
 
   // 5. Developer Telemetry
   if (settings.showTelemetry !== false) {
-    sections.push(buildTelemetrySection(data.telemetry));
+    sections.push(buildTelemetrySection(data.telemetry, getIndex()));
   }
 
   // 6. Featured Projects
-  if (settings.showFeaturedProjects !== false) {
-    sections.push(buildFeaturedProjectsSection(data.featuredProjects));
+  if (settings.showFeaturedProjects === true && data.featuredProjects?.length > 0) {
+    sections.push(buildFeaturedProjectsSection(data.featuredProjects, getIndex()));
   }
 
   // 7. Recent Activity
   if (settings.showRecentActivity !== false) {
-    sections.push(buildRecentActivitySection(data.recentActivities));
+    sections.push(buildRecentActivitySection(data.recentActivities, getIndex()));
   }
 
   // 8. Engineering Philosophy
-  if (settings.showPhilosophy !== false) {
-    sections.push(buildPhilosophySection(config));
+  if (settings.showPhilosophy === true) {
+    sections.push(buildPhilosophySection(config, getIndex()));
   }
 
   // 9. System Architecture
-  if (settings.showArchitecture !== false) {
-    sections.push(buildArchitectureSection());
+  if (settings.showArchitecture === true) {
+    sections.push(buildArchitectureSection(getIndex()));
   }
 
   // 10. Footer

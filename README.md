@@ -61,11 +61,10 @@ $ _
 ### `[ 03 // ENGINEERING DNA ]`
 
 ```text
-BACKEND          ██████████░░░░░░░░   58%  [ PRIMARY FOCUS ]
+BACKEND          ████████████░░░░░░   67%  [ PRIMARY FOCUS ]
 AI/ML            ███░░░░░░░░░░░░░░░   17%  [ ACTIVE DOMAIN ]
 FRONTEND         █░░░░░░░░░░░░░░░░░    8%  [ INTEGRATED ]
 DATABASES        █░░░░░░░░░░░░░░░░░    8%  [ INTEGRATED ]
-DEVELOPER TOOLS  █░░░░░░░░░░░░░░░░░    8%  [ INTEGRATED ]
 ```
 
 > *Note: DNA represents the distribution of technologies and engineering domains across public work — not a measure of expertise.*
@@ -81,94 +80,7 @@ DEVELOPER TOOLS  █░░░░░░░░░░░░░░░░░    8%  [
 | **Active Projects (90d)** | `3` | Continuous Engineering |
 | **Recent Commit Cadence** | `23` | Event Velocity |
 
-### `[ 05 // FEATURED PROJECTS ]`
-
-
-<table>
-  <tr>
-    <td>
-      <strong><code>ODOOXLDCE2026HACKATHON</code></strong> &nbsp;&nbsp; ⭐ `0` &nbsp; ⑂ `0`
-      <br/><br/>
-      Odoo x LDCE Hackathon 2026 
-      <br/><br/>
-      <strong>Stack:</strong> `TypeScript`
-      <br/><br/>
-      [**View Codebase ↗**](https://github.com/ThePinak/OdooXLDCE2026Hackathon)
-    </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>
-      <strong><code>DBMS NORMALIZATION</code></strong> &nbsp;&nbsp; ⭐ `0` &nbsp; ⑂ `0`
-      <br/><br/>
-      You can use this platform to learn about nomalization
-      <br/><br/>
-      <strong>Stack:</strong> `JavaScript`
-      <br/><br/>
-      [**View Codebase ↗**](https://github.com/ThePinak/DBMS-Normalization)&nbsp;&nbsp;|&nbsp;&nbsp;[**Live Deployment ↗**](https://dbms-normalization.vercel.app)
-    </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>
-      <strong><code>THEPINAK</code></strong> &nbsp;&nbsp; ⭐ `0` &nbsp; ⑂ `0`
-      <br/><br/>
-      Open source engineering project
-      <br/><br/>
-      <strong>Stack:</strong> `JavaScript`
-      <br/><br/>
-      [**View Codebase ↗**](https://github.com/ThePinak/ThePinak)
-    </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>
-      <strong><code>DAILY TASK MANAGER KANBAN</code></strong> &nbsp;&nbsp; ⭐ `3` &nbsp; ⑂ `0`
-      <br/><br/>
-      Open source engineering project
-      <br/><br/>
-      <strong>Stack:</strong> `JavaScript`
-      <br/><br/>
-      [**View Codebase ↗**](https://github.com/ThePinak/Daily-Task-Manager-Kanban)&nbsp;&nbsp;|&nbsp;&nbsp;[**Live Deployment ↗**](https://daily-task-manager-kanban.vercel.app)
-    </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>
-      <strong><code>BMS</code></strong> &nbsp;&nbsp; ⭐ `0` &nbsp; ⑂ `0`
-      <br/><br/>
-      Open source engineering project
-      <br/><br/>
-      <strong>Stack:</strong> `JavaScript`
-      <br/><br/>
-      [**View Codebase ↗**](https://github.com/ThePinak/BMS)
-    </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td>
-      <strong><code>TRIP FRONTEND</code></strong> &nbsp;&nbsp; ⭐ `0` &nbsp; ⑂ `0`
-      <br/><br/>
-      Open source engineering project
-      <br/><br/>
-      <strong>Stack:</strong> `JavaScript`
-      <br/><br/>
-      [**View Codebase ↗**](https://github.com/ThePinak/trip-frontend)&nbsp;&nbsp;|&nbsp;&nbsp;[**Live Deployment ↗**](https://trip-frontend-zeta.vercel.app)
-    </td>
-  </tr>
-</table>
-
-### `[ 06 // RECENT ACTIVITY ]`
+### `[ 05 // RECENT ACTIVITY ]`
 
 ```text
 [ ThePinak ]                 1h ago         Updated codebase
@@ -176,122 +88,6 @@ DEVELOPER TOOLS  █░░░░░░░░░░░░░░░░░    8%  [
 [ OdooXLDCE2026Hackathon ]   20 days ago    Merged PR: Pull Request
 [ OdooXLDCE2026Hackathon ]   20 days ago    Updated codebase
 [ OdooXLDCE2026Hackathon ]   20 days ago    Opened PR: Pull Request
-╭──────────── DEVELOPER TELEMETRY ─────────────╮
-│                                              │
-│   PUBLIC REPOSITORIES                  9     │
-│   ORIGINAL PROJECTS                    9     │
-│   FOLLOWERS                           20     │
-│   LANGUAGES                            2     │
-│   ACTIVE PROJECTS                      3     │
-│   RECENT COMMITS                      23     │
-│                                              │
-╰──────────────────────────────────────────────╯
-```
-
-### FEATURED PROJECTS
-
-```text
-┌──────────────────────────────────────────────────┐
-│ [PROJECT] ODOOXLDCE2026HACKATHON                 │
-│                                                  │
-│ Odoo x LDCE Hackathon 2026                       │
-│                                                  │
-│ TypeScript                                       │
-│                                                  │
-│ Stars: 0   |   Forks: 0                          │
-└──────────────────────────────────────────────────┘
-```
-↳ [View Repository](https://github.com/ThePinak/OdooXLDCE2026Hackathon)
-
-```text
-┌──────────────────────────────────────────────────┐
-│ [PROJECT] DBMS NORMALIZATION                     │
-│                                                  │
-│ You can use this platform to learn about         │
-│ nomalization                                     │
-│                                                  │
-│ JavaScript                                       │
-│                                                  │
-│ Stars: 0   |   Forks: 0                          │
-└──────────────────────────────────────────────────┘
-```
-↳ [View Repository](https://github.com/ThePinak/DBMS-Normalization)  |  [Live Demo](https://dbms-normalization.vercel.app)
-
-```text
-┌──────────────────────────────────────────────────┐
-│ [PROJECT] THEPINAK                               │
-│                                                  │
-│ Open source engineering project                  │
-│                                                  │
-│ JavaScript                                       │
-│                                                  │
-│ Stars: 0   |   Forks: 0                          │
-└──────────────────────────────────────────────────┘
-```
-↳ [View Repository](https://github.com/ThePinak/ThePinak)
-
-```text
-┌──────────────────────────────────────────────────┐
-│ [PROJECT] DAILY TASK MANAGER KANBAN              │
-│                                                  │
-│ Open source engineering project                  │
-│                                                  │
-│ JavaScript                                       │
-│                                                  │
-│ Stars: 3   |   Forks: 0                          │
-└──────────────────────────────────────────────────┘
-```
-↳ [View Repository](https://github.com/ThePinak/Daily-Task-Manager-Kanban)  |  [Live Demo](https://daily-task-manager-kanban.vercel.app)
-
-```text
-┌──────────────────────────────────────────────────┐
-│ [PROJECT] BMS                                    │
-│                                                  │
-│ Open source engineering project                  │
-│                                                  │
-│ JavaScript                                       │
-│                                                  │
-│ Stars: 0   |   Forks: 0                          │
-└──────────────────────────────────────────────────┘
-```
-↳ [View Repository](https://github.com/ThePinak/BMS)
-
-```text
-┌──────────────────────────────────────────────────┐
-│ [PROJECT] TRIP FRONTEND                          │
-│                                                  │
-│ Open source engineering project                  │
-│                                                  │
-│ JavaScript                                       │
-│                                                  │
-│ Stars: 0   |   Forks: 0                          │
-└──────────────────────────────────────────────────┘
-```
-↳ [View Repository](https://github.com/ThePinak/trip-frontend)  |  [Live Demo](https://trip-frontend-zeta.vercel.app)
-
-
-### RECENT ACTIVITY
-
-```text
-* Updated codebase
-  ThePinak
-  44m ago
-
-* Updated codebase
-  OdooXLDCE2026Hackathon
-  20 days ago
-
-* Merged PR: Pull Request
-  OdooXLDCE2026Hackathon
-  20 days ago
-
-* Updated codebase
-  OdooXLDCE2026Hackathon
-  20 days ago
-
-* Opened PR: Pull Request
-  OdooXLDCE2026Hackathon
-  20 days ago
 ```
 
 ---
@@ -301,11 +97,8 @@ DEVELOPER TOOLS  █░░░░░░░░░░░░░░░░░    8%  [
 ```text
 ────────────────────────────────────────────────────────────────────────────
 PINAK.OS // AUTOMATED DEVELOPER TELEMETRY ENGINE
-SYSTEM STATUS: ONLINE  |  NODE.JS v20  |  LAST SYNC: 2026-09-12 06:27 UTC
+SYSTEM STATUS: ONLINE  |  NODE.JS v20  |  LAST SYNC: 2026-09-12 06:32 UTC
 ────────────────────────────────────────────────────────────────────────────
-Last Telemetry Sync : 2026-09-12 05:49 UTC
-System Status       : ONLINE
-────────────────────────────────────────────────────────────
 ```
 
 </div>

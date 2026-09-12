@@ -56,7 +56,7 @@ ${badgesRow}
 /**
  * 2. Current Mission Section
  */
-export function buildMissionSection(profileConfig) {
+export function buildMissionSection(profileConfig, index = '01') {
   const mission = profileConfig.currentMission || 'BETTER THAN YESTERDAY';
   const learning = profileConfig.currentlyLearning || [];
   const building = profileConfig.currentlyBuilding || [];
@@ -90,7 +90,7 @@ export function buildMissionSection(profileConfig) {
     style: 'double'
   });
 
-  return `### \`[ 01 // MISSION CONTROL ]\`
+  return `### \`[ ${index} // MISSION CONTROL ]\`
 
 \`\`\`text
 ${asciiCard}
@@ -100,7 +100,7 @@ ${asciiCard}
 /**
  * 3. Terminal Interface Simulation Section
  */
-export function buildTerminalSection(profileConfig, featuredProjects = []) {
+export function buildTerminalSection(profileConfig, featuredProjects = [], index = '02') {
   const whoami = profileConfig.name || profileConfig.username || 'Developer';
   const mission = profileConfig.currentMission || 'Better than yesterday';
   const interests = (profileConfig.interests && profileConfig.interests.length > 0)
@@ -108,7 +108,7 @@ export function buildTerminalSection(profileConfig, featuredProjects = []) {
     : 'Software Engineering\nSystem Design';
   const projectList = featuredProjects.map(p => p.name).slice(0, 4).join('\n');
 
-  return `### \`[ 02 // TERMINAL SESSION ]\`
+  return `### \`[ ${index} // TERMINAL SESSION ]\`
 
 \`\`\`bash
 $ whoami
@@ -130,7 +130,7 @@ $ _
 /**
  * 4. Engineering DNA Section
  */
-export function buildEngineeringDnaSection(dnaList) {
+export function buildEngineeringDnaSection(dnaList, index = '03') {
   const rows = dnaList.map(item => {
     const categoryName = padRight(item.category.toUpperCase(), 16);
     const bar = createProgressBar(item.percentage, 18);
@@ -142,7 +142,7 @@ export function buildEngineeringDnaSection(dnaList) {
     return `${categoryName} ${bar}  ${pct} ${tag}`;
   });
 
-  return `### \`[ 03 // ENGINEERING DNA ]\`
+  return `### \`[ ${index} // ENGINEERING DNA ]\`
 
 \`\`\`text
 ${rows.join('\n')}
@@ -154,7 +154,7 @@ ${rows.join('\n')}
 /**
  * 5. Developer Telemetry Section
  */
-export function buildTelemetrySection(telemetry) {
+export function buildTelemetrySection(telemetry, index = '04') {
   const publicRepos = telemetry.publicRepositories ?? 0;
   const originalProjects = telemetry.originalProjects ?? 0;
   const followers = telemetry.followers ?? 0;
@@ -162,7 +162,7 @@ export function buildTelemetrySection(telemetry) {
   const activeProjects = telemetry.activeProjects ?? 0;
   const recentCommits = telemetry.recentCommits ?? 0;
 
-  return `### \`[ 04 // DEVELOPER TELEMETRY ]\`
+  return `### \`[ ${index} // DEVELOPER TELEMETRY ]\`
 
 | Metric | Telemetry Count | Operational Scope |
 | :--- | :---: | :--- |
@@ -177,7 +177,7 @@ export function buildTelemetrySection(telemetry) {
 /**
  * 6. Featured Projects Section
  */
-export function buildFeaturedProjectsSection(projects = []) {
+export function buildFeaturedProjectsSection(projects = [], index = '05') {
   if (!projects || projects.length === 0) {
     return '';
   }
@@ -211,7 +211,7 @@ export function buildFeaturedProjectsSection(projects = []) {
 </table>`;
   });
 
-  return `### \`[ 05 // FEATURED PROJECTS ]\`
+  return `### \`[ ${index} // FEATURED PROJECTS ]\`
 
 ${cards.join('\n')}`;
 }
@@ -219,9 +219,9 @@ ${cards.join('\n')}`;
 /**
  * 7. Recent Activity Section
  */
-export function buildRecentActivitySection(activities = []) {
+export function buildRecentActivitySection(activities = [], index = '05') {
   if (!activities || activities.length === 0) {
-    return `### \`[ 06 // RECENT ACTIVITY ]\`
+    return `### \`[ ${index} // RECENT ACTIVITY ]\`
 
 \`\`\`text
 * Regular engineering activity across public repositories
@@ -234,7 +234,7 @@ export function buildRecentActivitySection(activities = []) {
     return `${repoPadded} ${timePadded} ${act.summary}`;
   });
 
-  return `### \`[ 06 // RECENT ACTIVITY ]\`
+  return `### \`[ ${index} // RECENT ACTIVITY ]\`
 
 \`\`\`text
 ${lines.join('\n')}

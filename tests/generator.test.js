@@ -74,8 +74,8 @@ test('renderSections generates all core sections', () => {
   const markdown = renderSections(mockConfig, mockData);
 
   assert.ok(markdown.includes('PINAK.OS //'));
-  assert.ok(markdown.includes('MISSION CONTROL'));
-  assert.ok(markdown.includes('ENGINEERING DNA'));
-  assert.ok(markdown.includes('DEVELOPER TELEMETRY'));
+  assert.ok(markdown.includes('. OS:'));
+  assert.ok(markdown.includes('. Languages.Programming:'));
+  assert.ok(markdown.includes('- GitHub Stats'));
   assert.ok(markdown.includes('SYSTEM STATUS: ONLINE'));
 });

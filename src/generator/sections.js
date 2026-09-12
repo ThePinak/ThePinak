@@ -1,17 +1,17 @@
 /**
  * Markdown Section Builders for PINAK.OS
- * Sleek Minimalist Engineer Aesthetic (Dark-mode monochrome, capsule badges, high-density telemetry)
+ * Fastfetch / Neofetch System Information UI Style
  */
 
 import {
-  createProgressBar,
-  renderAsciiBox,
-  padRight,
+  renderDottedLine,
+  renderSectionDivider,
+  renderDualDottedLine,
   formatUtcDateTime
 } from '../utils/formatting.js';
 
 /**
- * 1. Hero / Identity Section
+ * 1. Hero Header
  */
 export function buildHeroSection(profileConfig, profileData) {
   const name = (profileConfig.name || 'Developer').toUpperCase();
@@ -54,187 +54,101 @@ ${badgesRow}
 }
 
 /**
- * 2. Current Mission Section
+ * 2. Main Neofetch / System Info Terminal Card
  */
-export function buildMissionSection(profileConfig, index = '01') {
-  const mission = profileConfig.currentMission || 'BETTER THAN YESTERDAY';
-  const learning = profileConfig.currentlyLearning || [];
-  const building = profileConfig.currentlyBuilding || [];
+export function buildNeofetchTerminalSection(profileConfig, profileData, totalWidth = 72) {
+  const sys = profileConfig.systemInfo || {};
+  const sysHeader = profileConfig.systemName || `${(profileConfig.username || 'user').toLowerCase()}@host`;
+  const dashesCount = Math.max(2, totalWidth - sysHeader.length - 1);
+  const headerLine = `${sysHeader} ${'-'.repeat(dashesCount)}`;
 
-  const boxLines = [
-    '',
-    `   ${mission.toUpperCase()}`
-  ];
+  const lines = [headerLine];
 
-  if (learning.length > 0) {
-    boxLines.push('');
-    boxLines.push('   CURRENTLY EXPLORING:');
-    for (const item of learning) {
-      boxLines.push(`   -> ${item}`);
-    }
+  // OS & System Info
+  lines.push(renderDottedLine('OS', sys.os || 'Windows 11, Linux', totalWidth));
+  lines.push(renderDottedLine('Uptime', sys.uptime || '20 years, 5 months', totalWidth));
+  lines.push(renderDottedLine('Host', sys.host || 'Software Engineering Lab', totalWidth));
+  lines.push(renderDottedLine('Kernel', sys.kernel || profileConfig.headline || 'Software Engineer', totalWidth));
+  lines.push(renderDottedLine('IDE', sys.ide || 'VS Code, Neovim', totalWidth));
+  lines.push('.');
+
+  // Languages
+  const progLangs = (profileData.languages && profileData.languages.length > 0)
+    ? profileData.languages.map(l => l.language).join(', ')
+    : 'JavaScript, TypeScript, Python, C++';
+  lines.push(renderDottedLine('Languages.Programming', progLangs, totalWidth));
+  if (sys.languagesComputer) {
+    lines.push(renderDottedLine('Languages.Computer', sys.languagesComputer, totalWidth));
+  }
+  if (sys.languagesReal) {
+    lines.push(renderDottedLine('Languages.Real', sys.languagesReal, totalWidth));
+  }
+  lines.push('.');
+
+  // Focus & Hobbies
+  const primaryFocus = profileConfig.interests?.slice(0, 2).join(', ') || 'Backend Engineering, System Design';
+  const currentLearning = profileConfig.currentlyLearning?.join(', ') || 'Machine Learning, System Design';
+  lines.push(renderDottedLine('Focus.Primary', primaryFocus, totalWidth));
+  lines.push(renderDottedLine('Focus.Exploring', currentLearning, totalWidth));
+  if (sys.hobbiesSoftware) {
+    lines.push(renderDottedLine('Hobbies.Software', sys.hobbiesSoftware, totalWidth));
+  }
+  if (sys.hobbiesHardware) {
+    lines.push(renderDottedLine('Hobbies.Hardware', sys.hobbiesHardware, totalWidth));
   }
 
-  if (building.length > 0) {
-    boxLines.push('');
-    boxLines.push('   CURRENTLY BUILDING:');
-    for (const b of building) {
-      boxLines.push(`   -> ${b}`);
-    }
+  // Contact
+  lines.push(renderSectionDivider('Contact', totalWidth));
+  if (profileConfig.social?.email) {
+    lines.push(renderDottedLine('Email.Personal', profileConfig.social.email, totalWidth));
   }
-  boxLines.push('');
+  if (profileConfig.social?.linkedin) {
+    const handle = profileConfig.social.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com\/in\//, '').replace(/\/$/, '');
+    lines.push(renderDottedLine('LinkedIn', handle, totalWidth));
+  }
+  if (profileConfig.social?.github || profileConfig.username) {
+    const gh = profileConfig.username || profileConfig.social?.github;
+    lines.push(renderDottedLine('GitHub', gh, totalWidth));
+  }
+  if (profileConfig.social?.portfolio) {
+    const port = profileConfig.social.portfolio.replace(/^https?:\/\//, '').replace(/\/$/, '');
+    lines.push(renderDottedLine('Portfolio', port, totalWidth));
+  }
 
-  const asciiCard = renderAsciiBox({
-    title: 'CURRENT MISSION',
-    lines: boxLines,
-    width: 54,
-    style: 'double'
-  });
+  // GitHub Stats
+  const tel = profileData.telemetry || {};
+  lines.push(renderSectionDivider('GitHub Stats', totalWidth));
 
-  return `### \`[ ${index} // MISSION CONTROL ]\`
+  const reposVal = `${tel.publicRepositories ?? 0} {Contributed: ${tel.originalProjects ?? 0}}`;
+  const starsVal = `${tel.totalStars ?? 0}`;
+  lines.push(renderDualDottedLine('Repos', reposVal, 'Stars', starsVal, totalWidth));
 
-\`\`\`text
-${asciiCard}
+  const commitsVal = `${tel.recentCommits ?? 0}`;
+  const followersVal = `${tel.followers ?? 0}`;
+  lines.push(renderDualDottedLine('Commits', commitsVal, 'Followers', followersVal, totalWidth));
+
+  const langsCount = `${tel.languages ?? 2}`;
+  const activeCount = `${tel.activeProjects ?? 0}`;
+  lines.push(renderDualDottedLine('Languages', langsCount, 'Active Repos (90d)', activeCount, totalWidth));
+
+  return `\`\`\`text
+${lines.join('\n')}
 \`\`\``;
 }
 
 /**
- * 3. Terminal Interface Simulation Section
+ * 3. Recent Activity Section
  */
-export function buildTerminalSection(profileConfig, featuredProjects = [], index = '02') {
-  const whoami = profileConfig.name || profileConfig.username || 'Developer';
-  const mission = profileConfig.currentMission || 'Better than yesterday';
-  const interests = (profileConfig.interests && profileConfig.interests.length > 0)
-    ? profileConfig.interests.join('\n')
-    : 'Software Engineering\nSystem Design';
-  const projectList = featuredProjects.map(p => p.name).slice(0, 4).join('\n');
-
-  return `### \`[ ${index} // TERMINAL SESSION ]\`
-
-\`\`\`bash
-$ whoami
-${whoami}
-
-$ current-mission
-${mission}
-
-$ focus
-${interests}
-
-$ ls projects/
-${projectList || 'projects'}
-
-$ _
-\`\`\``;
-}
-
-/**
- * 4. Engineering DNA Section
- */
-export function buildEngineeringDnaSection(dnaList, index = '03') {
-  const rows = dnaList.map(item => {
-    const categoryName = padRight(item.category.toUpperCase(), 16);
-    const bar = createProgressBar(item.percentage, 18);
-    const pct = `${item.percentage}%`.padStart(4, ' ');
-    let tag = '';
-    if (item.percentage >= 40) tag = ' [ PRIMARY FOCUS ]';
-    else if (item.percentage >= 15) tag = ' [ ACTIVE DOMAIN ]';
-    else tag = ' [ INTEGRATED ]';
-    return `${categoryName} ${bar}  ${pct} ${tag}`;
-  });
-
-  return `### \`[ ${index} // ENGINEERING DNA ]\`
-
-\`\`\`text
-${rows.join('\n')}
-\`\`\`
-
-> *Note: DNA represents the distribution of technologies and engineering domains across public work — not a measure of expertise.*`;
-}
-
-/**
- * 5. Developer Telemetry Section
- */
-export function buildTelemetrySection(telemetry, index = '04') {
-  const publicRepos = telemetry.publicRepositories ?? 0;
-  const originalProjects = telemetry.originalProjects ?? 0;
-  const followers = telemetry.followers ?? 0;
-  const languages = telemetry.languages ?? 0;
-  const activeProjects = telemetry.activeProjects ?? 0;
-  const recentCommits = telemetry.recentCommits ?? 0;
-
-  return `### \`[ ${index} // DEVELOPER TELEMETRY ]\`
-
-| Metric | Telemetry Count | Operational Scope |
-| :--- | :---: | :--- |
-| **Public Repositories** | \`${publicRepos}\` | Verified GitHub Artifacts |
-| **Original Projects** | \`${originalProjects}\` | Non-Fork Codebases |
-| **Followers** | \`${followers}\` | Developer Network |
-| **Primary Languages** | \`${languages}\` | Active Polyglot Stack |
-| **Active Projects (90d)** | \`${activeProjects}\` | Continuous Engineering |
-| **Recent Commit Cadence** | \`${recentCommits}\` | Event Velocity |`;
-}
-
-/**
- * 6. Featured Projects Section
- */
-export function buildFeaturedProjectsSection(projects = [], index = '05') {
-  if (!projects || projects.length === 0) {
+export function buildRecentActivitySection(activities = []) {
+  if (!activities || activities.length === 0) {
     return '';
   }
 
-  const cards = projects.map(proj => {
-    const techBadges = Array.isArray(proj.technologies)
-      ? proj.technologies.map(t => `\`${t}\``).join(' ')
-      : `\`${proj.technologies || 'JavaScript'}\``;
-
-    const starsPill = `⭐ \`${proj.stars || 0}\``;
-    const forksPill = `⑂ \`${proj.forks || 0}\``;
-
-    const actionLinks = [];
-    if (proj.repoUrl) actionLinks.push(`[**View Codebase ↗**](${proj.repoUrl})`);
-    if (proj.liveUrl) actionLinks.push(`[**Live Deployment ↗**](${proj.liveUrl})`);
-    const linksRow = actionLinks.join('&nbsp;&nbsp;|&nbsp;&nbsp;');
-
-    return `
-<table>
-  <tr>
-    <td>
-      <strong><code>${proj.displayName || proj.name.toUpperCase()}</code></strong> &nbsp;&nbsp; ${starsPill} &nbsp; ${forksPill}
-      <br/><br/>
-      ${proj.description || 'Software engineering project.'}
-      <br/><br/>
-      <strong>Stack:</strong> ${techBadges}
-      <br/><br/>
-      ${linksRow}
-    </td>
-  </tr>
-</table>`;
+  const lines = activities.slice(0, 5).map(act => {
+    return `* [ ${act.repository} ] ${act.timeAgo} — ${act.summary}`;
   });
 
-  return `### \`[ ${index} // FEATURED PROJECTS ]\`
-
-${cards.join('\n')}`;
-}
-
-/**
- * 7. Recent Activity Section
- */
-export function buildRecentActivitySection(activities = [], index = '05') {
-  if (!activities || activities.length === 0) {
-    return `### \`[ ${index} // RECENT ACTIVITY ]\`
-
-\`\`\`text
-* Regular engineering activity across public repositories
-\`\`\``;
-  }
-
-  const lines = activities.map(act => {
-    const repoPadded = padRight(`[ ${act.repository} ]`, 28);
-    const timePadded = padRight(act.timeAgo, 14);
-    return `${repoPadded} ${timePadded} ${act.summary}`;
-  });
-
-  return `### \`[ ${index} // RECENT ACTIVITY ]\`
+  return `### \`[ RECENT ACTIVITY ]\`
 
 \`\`\`text
 ${lines.join('\n')}
@@ -242,58 +156,7 @@ ${lines.join('\n')}
 }
 
 /**
- * 8. Engineering Philosophy Section (optional)
- */
-export function buildPhilosophySection(profileConfig) {
-  const items = profileConfig.engineeringPhilosophy || [
-    'Understand before implementing.',
-    'Prefer simple systems that solve real problems.',
-    'Design for maintainability.',
-    'Learn by building.',
-    'Ship, measure, improve.'
-  ];
-
-  const formatted = items.map((item, idx) => {
-    const num = String(idx + 1).padStart(2, '0');
-    return `${num} — ${item}`;
-  });
-
-  return `### \`[ 07 // ENGINEERING PHILOSOPHY ]\`
-
-\`\`\`text
-${formatted.join('\n')}
-\`\`\``;
-}
-
-/**
- * 9. System Architecture Section (optional)
- */
-export function buildArchitectureSection() {
-  return `### \`[ 08 // SYSTEM ARCHITECTURE ]\`
-
-\`\`\`text
-                    GitHub API
-                         │
-                         ▼
-                 Data Collection
-                         │
-                         ▼
-                    Analysis
-                 ┌───────┼───────┐
-                 ▼       ▼       ▼
-              Projects Skills Telemetry
-                 │       │       │
-                 └───────┼───────┘
-                         ▼
-                  README Generator
-                         │
-                         ▼
-                     README.md
-\`\`\``;
-}
-
-/**
- * 10. Footer Section
+ * 4. Footer Section
  */
 export function buildFooterSection() {
   const timestamp = formatUtcDateTime();

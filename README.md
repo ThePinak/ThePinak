@@ -15,79 +15,41 @@ _Intelligence Thrives in isolation._
 
 ---
 
-### `[ 01 // MISSION CONTROL ]`
-
 ```text
-╔═════════════════ CURRENT MISSION ══════════════════╗
-║                                                    ║
-║    BETTER THAN YESTERDAY                           ║
-║                                                    ║
-║    CURRENTLY EXPLORING:                            ║
-║    -> System Design                                ║
-║    -> Backend Engineering                          ║
-║    -> Machine Learning                             ║
-║                                                    ║
-║    CURRENTLY BUILDING:                             ║
-║    -> PINAK.OS                                     ║
-║    -> DBMS Normalization                           ║
-║                                                    ║
-╚════════════════════════════════════════════════════╝
+pinak@os -----------------------------------------------------------------
+. OS: ....................................... Windows 11, Linux, Android 14
+. Uptime: .............................................. 20 years, 5 months
+. Host: .......................................... Software Engineering Lab
+. Kernel: ................................... Software Engineer in Progress
+. IDE: .................................................... VS Code, Neovim
+.
+. Languages.Programming: ........................... JavaScript, TypeScript
+. Languages.Computer: ................... HTML, CSS, JSON, LaTeX, YAML, SQL
+. Languages.Real: ................................ English, Gujarati, Hindi
+.
+. Focus.Primary: .................... Software Engineering, Backend Systems
+. Focus.Exploring: ... System Design, Backend Engineering, Machine Learning
+. Hobbies.Software: ................. Building Developer Tools, Open Source
+. Hobbies.Hardware: ............................ Electronics, System Tuning
+- Contact ----------------------------------------------------------------
+. Email.Personal: ................................ pinakthummar@example.com
+. LinkedIn: .................................................. pinakthummar
+. GitHub: ........................................................ ThePinak
+. Portfolio: ............................................. pinakthummar.dev
+- GitHub Stats -----------------------------------------------------------
+. Repos: ........ 9 {Contributed: 9} | Stars: .......................... 3
+. Commits: ...................... 23 | Followers: ..................... 20
+. Languages: ..................... 2 | Active Repos (90d): ............. 3
 ```
 
-### `[ 02 // TERMINAL SESSION ]`
-
-```bash
-$ whoami
-Pinak Thummar
-
-$ current-mission
-BETTER THAN YESTERDAY
-
-$ focus
-Software Engineering
-Backend Systems
-AI Systems
-Distributed Systems
-
-$ ls projects/
-OdooXLDCE2026Hackathon
-DBMS-Normalization
-ThePinak
-Daily-Task-Manager-Kanban
-
-$ _
-```
-
-### `[ 03 // ENGINEERING DNA ]`
+### `[ RECENT ACTIVITY ]`
 
 ```text
-BACKEND          ████████████░░░░░░   67%  [ PRIMARY FOCUS ]
-AI/ML            ███░░░░░░░░░░░░░░░   17%  [ ACTIVE DOMAIN ]
-FRONTEND         █░░░░░░░░░░░░░░░░░    8%  [ INTEGRATED ]
-DATABASES        █░░░░░░░░░░░░░░░░░    8%  [ INTEGRATED ]
-```
-
-> *Note: DNA represents the distribution of technologies and engineering domains across public work — not a measure of expertise.*
-
-### `[ 04 // DEVELOPER TELEMETRY ]`
-
-| Metric | Telemetry Count | Operational Scope |
-| :--- | :---: | :--- |
-| **Public Repositories** | `9` | Verified GitHub Artifacts |
-| **Original Projects** | `9` | Non-Fork Codebases |
-| **Followers** | `20` | Developer Network |
-| **Primary Languages** | `2` | Active Polyglot Stack |
-| **Active Projects (90d)** | `3` | Continuous Engineering |
-| **Recent Commit Cadence** | `23` | Event Velocity |
-
-### `[ 05 // RECENT ACTIVITY ]`
-
-```text
-[ ThePinak ]                 1h ago         Updated codebase
-[ OdooXLDCE2026Hackathon ]   20 days ago    Updated codebase
-[ OdooXLDCE2026Hackathon ]   20 days ago    Merged PR: Pull Request
-[ OdooXLDCE2026Hackathon ]   20 days ago    Updated codebase
-[ OdooXLDCE2026Hackathon ]   20 days ago    Opened PR: Pull Request
+* [ ThePinak ] 1h ago — Updated codebase
+* [ OdooXLDCE2026Hackathon ] 20 days ago — Updated codebase
+* [ OdooXLDCE2026Hackathon ] 20 days ago — Merged PR: Pull Request
+* [ OdooXLDCE2026Hackathon ] 20 days ago — Updated codebase
+* [ OdooXLDCE2026Hackathon ] 20 days ago — Opened PR: Pull Request
 ```
 
 ---
@@ -97,7 +59,7 @@ DATABASES        █░░░░░░░░░░░░░░░░░    8%  [
 ```text
 ────────────────────────────────────────────────────────────────────────────
 PINAK.OS // AUTOMATED DEVELOPER TELEMETRY ENGINE
-SYSTEM STATUS: ONLINE  |  NODE.JS v20  |  LAST SYNC: 2026-09-12 06:33 UTC
+SYSTEM STATUS: ONLINE  |  NODE.JS v20  |  LAST SYNC: 2026-09-12 06:35 UTC
 ────────────────────────────────────────────────────────────────────────────
 ```
 

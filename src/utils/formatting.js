@@ -159,3 +159,37 @@ export function renderAsciiBox({ title = '', lines = [], width = 48, style = 'ro
 
   return result.join('\n');
 }
+
+/**
+ * Render a dotted key-value line like neofetch / system info:
+ * . Key: ........................................... Value
+ */
+export function renderDottedLine(key, value, totalWidth = 68) {
+  const prefix = `. ${key}: `;
+  const valStr = String(value ?? '');
+  const dotsCount = Math.max(3, totalWidth - prefix.length - valStr.length);
+  const dots = '.'.repeat(dotsCount);
+  return `${prefix}${dots} ${valStr}`;
+}
+
+/**
+ * Render a section divider:
+ * - Section Title ---------------------------------------------
+ */
+export function renderSectionDivider(title, totalWidth = 68) {
+  const prefix = `- ${title} `;
+  const dashesCount = Math.max(2, totalWidth - prefix.length);
+  return `${prefix}${'-'.repeat(dashesCount)}`;
+}
+
+/**
+ * Render a dual-column dotted metric line:
+ * . Repos: ........ 9 {Contributed: 9} | Stars: .................... 3
+ */
+export function renderDualDottedLine(key1, val1, key2, val2, totalWidth = 68) {
+  const halfWidth = Math.floor((totalWidth - 3) / 2);
+  const col1 = renderDottedLine(key1, val1, halfWidth);
+  const col2 = renderDottedLine(key2, val2, totalWidth - halfWidth - 3);
+  return `${col1} | ${col2.replace(/^\. /, '')}`;
+}
+

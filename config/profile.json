@@ -1,11 +1,24 @@
 {
   "name": "Pinak Thummar",
   "username": "ThePinak",
+  "systemName": "pinak@os",
   "headline": "Software Engineer in Progress",
   "tagline": "Build → Learn → Ship → Improve",
   "bio": "Intelligence Thrives in isolation.",
 
   "currentMission": "BETTER THAN YESTERDAY",
+
+  "systemInfo": {
+    "os": "Windows 11, Linux, Android 14",
+    "uptime": "20 years, 5 months",
+    "host": "Software Engineering Lab",
+    "kernel": "Software Engineer in Progress",
+    "ide": "VS Code, Neovim",
+    "languagesComputer": "HTML, CSS, JSON, LaTeX, YAML, SQL",
+    "languagesReal": "English, Gujarati, Hindi",
+    "hobbiesSoftware": "Building Developer Tools, Open Source",
+    "hobbiesHardware": "Electronics, System Tuning"
+  },
 
   "currentlyLearning": [
     "System Design",
@@ -31,7 +44,6 @@
     "portfolio": "https://pinakthummar.dev",
     "email": "pinakthummar@example.com"
   },
-
 
   "featuredRepositories": [],
 

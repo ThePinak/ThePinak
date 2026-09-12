@@ -1,0 +1,18 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+
+# Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Cache directory
+.cache/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Output preview
+preview-README.md

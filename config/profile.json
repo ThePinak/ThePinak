@@ -1,0 +1,51 @@
+{
+  "name": "Pinak Thummar",
+  "username": "ThePinak",
+  "headline": "Software Engineer in Progress",
+  "tagline": "Build → Learn → Ship → Improve",
+  "bio": "Intelligence Thrives in isolation.",
+
+  "currentMission": "BETTER THAN YESTERDAY",
+
+  "currentlyLearning": [
+    "System Design",
+    "Backend Engineering",
+    "Machine Learning"
+  ],
+
+  "currentlyBuilding": [
+    "PINAK.OS",
+    "DBMS Normalization"
+  ],
+
+  "interests": [
+    "Software Engineering",
+    "Backend Systems",
+    "AI Systems",
+    "Distributed Systems"
+  ],
+
+  "social": {
+    "github": "https://github.com/ThePinak",
+    "linkedin": "https://linkedin.com/in/pinakthummar",
+    "portfolio": "https://pinakthummar.dev",
+    "email": "pinakthummar@example.com"
+  },
+
+
+  "featuredRepositories": [],
+
+  "settings": {
+    "showTelemetry": true,
+    "showEngineeringDNA": true,
+    "showContributionStats": true,
+    "showRecentActivity": true,
+    "showFeaturedProjects": true,
+    "showTerminalIntro": true,
+    "showPhilosophy": false,
+    "showArchitecture": false,
+    "maxFeaturedProjects": 6,
+    "maxRecentActivities": 5,
+    "excludeForks": true
+  }
+}

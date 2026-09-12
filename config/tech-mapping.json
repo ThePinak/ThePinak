@@ -1,0 +1,36 @@
+{
+  "categories": {
+    "Backend": {
+      "languages": ["JavaScript", "TypeScript", "Python", "Java", "Go", "Rust", "C#", "Ruby", "PHP", "Kotlin", "Scala"],
+      "topics": ["backend", "api", "rest", "graphql", "server", "microservices", "express", "fastapi", "nestjs", "django", "spring-boot", "gin"]
+    },
+    "Frontend": {
+      "languages": ["HTML", "CSS", "SCSS", "Vue", "Svelte"],
+      "topics": ["frontend", "ui", "ux", "react", "nextjs", "vue", "tailwind", "vite", "angular", "web", "css", "html"]
+    },
+    "Databases": {
+      "languages": ["SQL", "PLpgSQL", "TSQL"],
+      "topics": ["database", "sql", "postgresql", "postgres", "mongodb", "mysql", "redis", "sqlite", "prisma", "orm", "nosql"]
+    },
+    "AI/ML": {
+      "languages": ["Jupyter Notebook", "Python", "R", "Julia"],
+      "topics": ["ai", "machine-learning", "deep-learning", "nlp", "llm", "rag", "pytorch", "tensorflow", "langchain", "openai", "neural-network"]
+    },
+    "Cloud": {
+      "languages": ["HCL"],
+      "topics": ["cloud", "aws", "gcp", "azure", "serverless", "lambda", "terraform", "cloudflare"]
+    },
+    "DevOps": {
+      "languages": ["Dockerfile", "Shell", "PowerShell"],
+      "topics": ["devops", "docker", "kubernetes", "ci-cd", "github-actions", "helm", "monitoring", "ansible"]
+    },
+    "Systems": {
+      "languages": ["C", "C++", "Rust", "Assembly", "Zig"],
+      "topics": ["systems", "embedded", "os", "operating-system", "compiler", "networking", "kernel", "cli"]
+    },
+    "Developer Tools": {
+      "languages": [],
+      "topics": ["cli", "devtools", "automation", "generator", "utility", "tooling", "linter", "sdk"]
+    }
+  }
+}

@@ -1,0 +1,57 @@
+name: Update PINAK.OS Profile README
+
+on:
+  schedule:
+    # Run daily at 06:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'config/**'
+      - 'src/**'
+      - 'templates/**'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-profile:
+    name: Sync GitHub Profile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run PINAK.OS README Generator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+        run: |
+          node src/index.js generate
+
+      - name: Validate Generated README
+        run: |
+          node src/index.js validate
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Check if README.md or generated data changed
+          if git diff --quiet README.md generated/profile-data.json; then
+            echo "No changes detected. Profile is up to date."
+          else
+            git add README.md generated/profile-data.json
+            git commit -m "telemetry: synchronize PINAK.OS profile README [skip ci]"
+            git push
+          fi

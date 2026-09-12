@@ -1,5 +1,6 @@
 /**
- * Markdown Section Builders for PINAK.OS (Clean Terminal Aesthetic, No Emojis)
+ * Markdown Section Builders for PINAK.OS
+ * Sleek Minimalist Engineer Aesthetic (Dark-mode monochrome, capsule badges, high-density telemetry)
  */
 
 import {
@@ -13,26 +14,42 @@ import {
  * 1. Hero / Identity Section
  */
 export function buildHeroSection(profileConfig, profileData) {
-  const name = profileConfig.name || 'Developer';
+  const name = (profileConfig.name || 'Developer').toUpperCase();
+  const headline = (profileConfig.headline || 'Software Engineer').toUpperCase();
   const tagline = profileConfig.tagline || 'Build → Learn → Ship → Improve';
   const bio = profileConfig.bio || '';
 
-  const socialLinks = [];
-  if (profileConfig.social?.github) socialLinks.push(`[GitHub](${profileConfig.social.github})`);
-  if (profileConfig.social?.linkedin) socialLinks.push(`[LinkedIn](${profileConfig.social.linkedin})`);
-  if (profileConfig.social?.portfolio) socialLinks.push(`[Portfolio](${profileConfig.social.portfolio})`);
-  if (profileConfig.social?.email) socialLinks.push(`[Email](mailto:${profileConfig.social.email})`);
+  const badges = [];
+  if (profileConfig.social?.github) {
+    badges.push(`[![GitHub](https://img.shields.io/badge/GitHub-0D1117?style=flat-square&logo=github&logoColor=white)](${profileConfig.social.github})`);
+  }
+  if (profileConfig.social?.linkedin) {
+    badges.push(`[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](${profileConfig.social.linkedin})`);
+  }
+  if (profileConfig.social?.portfolio) {
+    badges.push(`[![Portfolio](https://img.shields.io/badge/Portfolio-0D1117?style=flat-square&logo=googlechrome&logoColor=white)](${profileConfig.social.portfolio})`);
+  }
+  if (profileConfig.social?.email) {
+    badges.push(`[![Email](https://img.shields.io/badge/Email-0D1117?style=flat-square&logo=gmail&logoColor=white)](mailto:${profileConfig.social.email})`);
+  }
 
-  const linksRow = socialLinks.length > 0 ? socialLinks.join(' | ') : '';
+  // System status badge
+  badges.push(`![Status](https://img.shields.io/badge/System-ONLINE-161B22?style=flat-square&logo=gnubash&logoColor=white)`);
 
-  return `# ${name.toUpperCase()}
+  const badgesRow = badges.join('&nbsp;&nbsp;');
 
-### \`PINAK.OS // DEVELOPER OPERATING SYSTEM\`
+  return `<div align="center">
+
+# \`${name}\`
+### \`PINAK.OS // ${headline}\`
 
 > **\`${tagline}\`**
 
-${bio ? `${bio}\n` : ''}
-${linksRow ? `${linksRow}\n` : ''}
+${bio ? `_${bio}_\n` : ''}
+${badgesRow}
+
+</div>
+
 ---`;
 }
 
@@ -69,11 +86,13 @@ export function buildMissionSection(profileConfig) {
   const asciiCard = renderAsciiBox({
     title: 'CURRENT MISSION',
     lines: boxLines,
-    width: 52,
+    width: 54,
     style: 'double'
   });
 
-  return `\`\`\`text
+  return `### \`[ 01 // MISSION CONTROL ]\`
+
+\`\`\`text
 ${asciiCard}
 \`\`\``;
 }
@@ -89,7 +108,9 @@ export function buildTerminalSection(profileConfig, featuredProjects = []) {
     : 'Software Engineering\nSystem Design';
   const projectList = featuredProjects.map(p => p.name).slice(0, 4).join('\n');
 
-  return `\`\`\`bash
+  return `### \`[ 02 // TERMINAL SESSION ]\`
+
+\`\`\`bash
 $ whoami
 ${whoami}
 
@@ -111,54 +132,46 @@ $ _
  */
 export function buildEngineeringDnaSection(dnaList) {
   const rows = dnaList.map(item => {
-    const categoryName = padRight(item.category, 18);
-    const bar = createProgressBar(item.percentage, 16);
+    const categoryName = padRight(item.category.toUpperCase(), 16);
+    const bar = createProgressBar(item.percentage, 18);
     const pct = `${item.percentage}%`.padStart(4, ' ');
-    return `${categoryName} ${bar}  ${pct}`;
+    let tag = '';
+    if (item.percentage >= 40) tag = ' [ PRIMARY FOCUS ]';
+    else if (item.percentage >= 15) tag = ' [ ACTIVE DOMAIN ]';
+    else tag = ' [ INTEGRATED ]';
+    return `${categoryName} ${bar}  ${pct} ${tag}`;
   });
 
-  return `### ENGINEERING DNA
+  return `### \`[ 03 // ENGINEERING DNA ]\`
 
 \`\`\`text
 ${rows.join('\n')}
 \`\`\`
 
-> *DNA represents the distribution of technologies and engineering domains across my public work — not a measure of expertise.*`;
+> *Note: DNA represents the distribution of technologies and engineering domains across public work — not a measure of expertise.*`;
 }
 
 /**
  * 5. Developer Telemetry Section
  */
 export function buildTelemetrySection(telemetry) {
-  const metrics = [
-    ['PUBLIC REPOSITORIES', telemetry.publicRepositories ?? 0],
-    ['ORIGINAL PROJECTS', telemetry.originalProjects ?? 0],
-    ['FOLLOWERS', telemetry.followers ?? 0],
-    ['LANGUAGES', telemetry.languages ?? 0],
-    ['ACTIVE PROJECTS', telemetry.activeProjects ?? 0],
-    ['RECENT COMMITS', telemetry.recentCommits ?? 0]
-  ];
+  const publicRepos = telemetry.publicRepositories ?? 0;
+  const originalProjects = telemetry.originalProjects ?? 0;
+  const followers = telemetry.followers ?? 0;
+  const languages = telemetry.languages ?? 0;
+  const activeProjects = telemetry.activeProjects ?? 0;
+  const recentCommits = telemetry.recentCommits ?? 0;
 
-  const lines = [''];
-  for (const [label, val] of metrics) {
-    const paddedLabel = padRight(`  ${label}`, 34);
-    const paddedVal = String(val).padStart(6, ' ');
-    lines.push(`${paddedLabel}${paddedVal}`);
-  }
-  lines.push('');
+  return `### \`[ 04 // DEVELOPER TELEMETRY ]\`
 
-  const box = renderAsciiBox({
-    title: 'DEVELOPER TELEMETRY',
-    lines,
-    width: 48,
-    style: 'rounded'
-  });
-
-  return `### DEVELOPER TELEMETRY
-
-\`\`\`text
-${box}
-\`\`\``;
+| Metric | Telemetry Count | Operational Scope |
+| :--- | :---: | :--- |
+| **Public Repositories** | \`${publicRepos}\` | Verified GitHub Artifacts |
+| **Original Projects** | \`${originalProjects}\` | Non-Fork Codebases |
+| **Followers** | \`${followers}\` | Developer Network |
+| **Primary Languages** | \`${languages}\` | Active Polyglot Stack |
+| **Active Projects (90d)** | \`${activeProjects}\` | Continuous Engineering |
+| **Recent Commit Cadence** | \`${recentCommits}\` | Event Velocity |`;
 }
 
 /**
@@ -170,38 +183,35 @@ export function buildFeaturedProjectsSection(projects = []) {
   }
 
   const cards = projects.map(proj => {
-    const techStack = Array.isArray(proj.technologies)
-      ? proj.technologies.join(' · ')
-      : proj.technologies || '';
+    const techBadges = Array.isArray(proj.technologies)
+      ? proj.technologies.map(t => `\`${t}\``).join(' ')
+      : `\`${proj.technologies || 'JavaScript'}\``;
 
-    const lines = [
-      `[PROJECT] ${proj.displayName || proj.name.toUpperCase()}`,
-      '',
-      proj.description || 'Software engineering project',
-      '',
-      techStack ? `${techStack}` : '',
-      '',
-      `Stars: ${proj.stars || 0}   |   Forks: ${proj.forks || 0}`
-    ].filter((_, idx) => idx !== 4 || techStack.length > 0);
+    const starsPill = `⭐ \`${proj.stars || 0}\``;
+    const forksPill = `⑂ \`${proj.forks || 0}\``;
 
-    const asciiBox = renderAsciiBox({
-      title: '',
-      lines,
-      width: 52,
-      style: 'single'
-    });
+    const actionLinks = [];
+    if (proj.repoUrl) actionLinks.push(`[**View Codebase ↗**](${proj.repoUrl})`);
+    if (proj.liveUrl) actionLinks.push(`[**Live Deployment ↗**](${proj.liveUrl})`);
+    const linksRow = actionLinks.join('&nbsp;&nbsp;|&nbsp;&nbsp;');
 
-    const repoLink = proj.repoUrl ? `[View Repository](${proj.repoUrl})` : '';
-    const liveLink = proj.liveUrl ? `[Live Demo](${proj.liveUrl})` : '';
-    const links = [repoLink, liveLink].filter(Boolean).join('  |  ');
-
-    return `\`\`\`text
-${asciiBox}
-\`\`\`
-${links ? `↳ ${links}\n` : ''}`;
+    return `
+<table>
+  <tr>
+    <td>
+      <strong><code>${proj.displayName || proj.name.toUpperCase()}</code></strong> &nbsp;&nbsp; ${starsPill} &nbsp; ${forksPill}
+      <br/><br/>
+      ${proj.description || 'Software engineering project.'}
+      <br/><br/>
+      <strong>Stack:</strong> ${techBadges}
+      <br/><br/>
+      ${linksRow}
+    </td>
+  </tr>
+</table>`;
   });
 
-  return `### FEATURED PROJECTS
+  return `### \`[ 05 // FEATURED PROJECTS ]\`
 
 ${cards.join('\n')}`;
 }
@@ -211,28 +221,28 @@ ${cards.join('\n')}`;
  */
 export function buildRecentActivitySection(activities = []) {
   if (!activities || activities.length === 0) {
-    return `### RECENT ACTIVITY
+    return `### \`[ 06 // RECENT ACTIVITY ]\`
 
 \`\`\`text
-* Pushed regular updates to active repositories
-  System
-  Recently
+* Regular engineering activity across public repositories
 \`\`\``;
   }
 
   const lines = activities.map(act => {
-    return `* ${act.summary}\n  ${act.repository}\n  ${act.timeAgo}`;
+    const repoPadded = padRight(`[ ${act.repository} ]`, 28);
+    const timePadded = padRight(act.timeAgo, 14);
+    return `${repoPadded} ${timePadded} ${act.summary}`;
   });
 
-  return `### RECENT ACTIVITY
+  return `### \`[ 06 // RECENT ACTIVITY ]\`
 
 \`\`\`text
-${lines.join('\n\n')}
+${lines.join('\n')}
 \`\`\``;
 }
 
 /**
- * 8. Engineering Philosophy Section
+ * 8. Engineering Philosophy Section (optional)
  */
 export function buildPhilosophySection(profileConfig) {
   const items = profileConfig.engineeringPhilosophy || [
@@ -248,7 +258,7 @@ export function buildPhilosophySection(profileConfig) {
     return `${num} — ${item}`;
   });
 
-  return `### ENGINEERING PHILOSOPHY
+  return `### \`[ 07 // ENGINEERING PHILOSOPHY ]\`
 
 \`\`\`text
 ${formatted.join('\n')}
@@ -256,10 +266,10 @@ ${formatted.join('\n')}
 }
 
 /**
- * 9. System Architecture Section
+ * 9. System Architecture Section (optional)
  */
 export function buildArchitectureSection() {
-  return `### SYSTEM ARCHITECTURE
+  return `### \`[ 08 // SYSTEM ARCHITECTURE ]\`
 
 \`\`\`text
                     GitHub API
@@ -279,26 +289,25 @@ export function buildArchitectureSection() {
                          │
                          ▼
                      README.md
-\`\`\`
-
-> *This profile is dynamically synchronized using PINAK.OS via GitHub Actions automation.*`;
+\`\`\``;
 }
 
 /**
- * 10. Contact / Footer Section
+ * 10. Footer Section
  */
 export function buildFooterSection() {
   const timestamp = formatUtcDateTime();
 
   return `---
 
-\`\`\`text
-────────────────────────────────────────────────────────────
-PINAK.OS // Automated Profile Sync System
-Build → Learn → Ship → Improve
+<div align="center">
 
-Last Telemetry Sync : ${timestamp}
-System Status       : ONLINE
-────────────────────────────────────────────────────────────
-\`\`\``;
+\`\`\`text
+────────────────────────────────────────────────────────────────────────────
+PINAK.OS // AUTOMATED DEVELOPER TELEMETRY ENGINE
+SYSTEM STATUS: ONLINE  |  NODE.JS v20  |  LAST SYNC: ${timestamp}
+────────────────────────────────────────────────────────────────────────────
+\`\`\`
+
+</div>`;
 }

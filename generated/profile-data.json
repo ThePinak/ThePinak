@@ -1,0 +1,183 @@
+{
+  "generatedAt": "2026-09-12T06:36:27.184Z",
+  "profile": {
+    "username": "ThePinak",
+    "name": "Pinak Thummar",
+    "bio": "Learning and Building\r\n\r\n[Taking my ideas from ‘kind of’ to ‘one of a kind']\r\n",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/191749678?v=4",
+    "publicRepos": 9,
+    "followers": 20,
+    "following": 57,
+    "createdAt": "2024-12-15T08:38:27Z",
+    "updatedAt": "2026-08-16T10:02:33Z",
+    "htmlUrl": "https://github.com/ThePinak"
+  },
+  "telemetry": {
+    "publicRepositories": 9,
+    "originalProjects": 9,
+    "followers": 20,
+    "following": 57,
+    "languages": 2,
+    "activeProjects": 3,
+    "recentCommits": 24,
+    "totalStars": 3,
+    "totalForks": 0
+  },
+  "dna": [
+    {
+      "category": "Backend",
+      "count": 8,
+      "percentage": 67
+    },
+    {
+      "category": "AI/ML",
+      "count": 2,
+      "percentage": 17
+    },
+    {
+      "category": "Frontend",
+      "count": 1,
+      "percentage": 8
+    },
+    {
+      "category": "Databases",
+      "count": 1,
+      "percentage": 8
+    }
+  ],
+  "languages": [
+    {
+      "language": "JavaScript",
+      "count": 7,
+      "percentage": 88
+    },
+    {
+      "language": "TypeScript",
+      "count": 1,
+      "percentage": 13
+    }
+  ],
+  "featuredProjects": [
+    {
+      "name": "OdooXLDCE2026Hackathon",
+      "displayName": "ODOOXLDCE2026HACKATHON",
+      "icon": "",
+      "description": "Odoo x LDCE Hackathon 2026 ",
+      "technologies": [
+        "TypeScript"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-08-22T11:31:23Z",
+      "repoUrl": "https://github.com/ThePinak/OdooXLDCE2026Hackathon",
+      "liveUrl": ""
+    },
+    {
+      "name": "DBMS-Normalization",
+      "displayName": "DBMS NORMALIZATION",
+      "icon": "",
+      "description": "You can use this platform to learn about nomalization",
+      "technologies": [
+        "JavaScript"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-04-16T15:14:27Z",
+      "repoUrl": "https://github.com/ThePinak/DBMS-Normalization",
+      "liveUrl": "https://dbms-normalization.vercel.app"
+    },
+    {
+      "name": "ThePinak",
+      "displayName": "THEPINAK",
+      "icon": "",
+      "description": "Open source engineering project",
+      "technologies": [
+        "JavaScript"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-09-12T06:36:14Z",
+      "repoUrl": "https://github.com/ThePinak/ThePinak",
+      "liveUrl": ""
+    },
+    {
+      "name": "Daily-Task-Manager-Kanban",
+      "displayName": "DAILY TASK MANAGER KANBAN",
+      "icon": "",
+      "description": "Open source engineering project",
+      "technologies": [
+        "JavaScript"
+      ],
+      "stars": 3,
+      "forks": 0,
+      "updatedAt": "2026-02-28T15:57:56Z",
+      "repoUrl": "https://github.com/ThePinak/Daily-Task-Manager-Kanban",
+      "liveUrl": "https://daily-task-manager-kanban.vercel.app"
+    },
+    {
+      "name": "BMS",
+      "displayName": "BMS",
+      "icon": "",
+      "description": "Open source engineering project",
+      "technologies": [
+        "JavaScript"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-08-19T19:34:42Z",
+      "repoUrl": "https://github.com/ThePinak/BMS",
+      "liveUrl": ""
+    },
+    {
+      "name": "trip-frontend",
+      "displayName": "TRIP FRONTEND",
+      "icon": "",
+      "description": "Open source engineering project",
+      "technologies": [
+        "JavaScript"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2025-09-11T08:55:18Z",
+      "repoUrl": "https://github.com/ThePinak/trip-frontend",
+      "liveUrl": "https://trip-frontend-zeta.vercel.app"
+    }
+  ],
+  "recentActivities": [
+    {
+      "summary": "Updated codebase",
+      "repository": "ThePinak",
+      "timeAgo": "just now",
+      "date": "2026-09-12T06:36:14Z",
+      "type": "Push"
+    },
+    {
+      "summary": "Updated codebase",
+      "repository": "ThePinak",
+      "timeAgo": "1h ago",
+      "date": "2026-09-12T05:04:45Z",
+      "type": "Push"
+    },
+    {
+      "summary": "Updated codebase",
+      "repository": "OdooXLDCE2026Hackathon",
+      "timeAgo": "20 days ago",
+      "date": "2026-08-22T11:31:24Z",
+      "type": "Push"
+    },
+    {
+      "summary": "Merged PR: Pull Request",
+      "repository": "OdooXLDCE2026Hackathon",
+      "timeAgo": "20 days ago",
+      "date": "2026-08-22T09:03:21Z",
+      "type": "PR"
+    },
+    {
+      "summary": "Updated codebase",
+      "repository": "OdooXLDCE2026Hackathon",
+      "timeAgo": "20 days ago",
+      "date": "2026-08-22T09:03:22Z",
+      "type": "Push"
+    }
+  ]
+}

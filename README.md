@@ -1,5 +1,3 @@
-<!-- PINAK_OS_START -->
-
 <div align="center">
 
 # Pinak Thummar
@@ -83,7 +81,5 @@ _Intelligence Thrives in isolation._
 ---
 
 <div align="center">
-  <sub>Designed with precision. Automatically updated via GitHub Actions • 2026-09-12 06:45 UTC</sub>
+  <sub>Designed with precision.</sub>
 </div>
-
-<!-- PINAK_OS_END -->

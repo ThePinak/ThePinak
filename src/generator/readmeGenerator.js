@@ -18,7 +18,10 @@ import { logger } from '../utils/logger.js';
 
 import {
   buildHeroSection,
-  buildNeofetchTerminalSection,
+  buildCapabilitiesSection,
+  buildTechStackSection,
+  buildTelemetrySection,
+  buildCurrentMissionSection,
   buildRecentActivitySection,
   buildFooterSection
 } from './sections.js';
@@ -132,18 +135,29 @@ export function renderSections(config, data) {
   const settings = config.settings || {};
 
   // 1. Hero
-  sections.push(buildHeroSection(config, data.profile));
+  sections.push(buildHeroSection(config));
 
-  // 2. Neofetch Terminal System Information
-  sections.push(buildNeofetchTerminalSection(config, data, 74));
+  // 2. Architecture & Capabilities Grid
+  sections.push(buildCapabilitiesSection(config));
 
-  // 3. Recent Activity (if enabled)
+  // 3. Tech Stack & Ecosystem
+  sections.push(buildTechStackSection(data));
+
+  // 4. Developer Telemetry Metrics
+  if (settings.showTelemetry !== false) {
+    sections.push(buildTelemetrySection(data.telemetry));
+  }
+
+  // 5. Current Trajectory
+  sections.push(buildCurrentMissionSection(config));
+
+  // 6. Recent Activity
   if (settings.showRecentActivity !== false && data.recentActivities?.length > 0) {
     const act = buildRecentActivitySection(data.recentActivities);
     if (act) sections.push(act);
   }
 
-  // 4. Footer
+  // 7. Footer
   sections.push(buildFooterSection());
 
   return sections.join('\n\n');

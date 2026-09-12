@@ -1,52 +1,46 @@
 /**
  * Markdown Section Builders for PINAK.OS
- * Fastfetch / Neofetch System Information UI Style
+ * Apple Cupertino Aesthetic: Clean, light/white theme, perfectly organized, elegant typography.
  */
 
-import {
-  renderDottedLine,
-  renderSectionDivider,
-  renderDualDottedLine,
-  formatUtcDateTime
-} from '../utils/formatting.js';
+import { formatUtcDateTime } from '../utils/formatting.js';
 
 /**
- * 1. Hero Header
+ * 1. Hero Header (Apple Minimalist Typography)
  */
-export function buildHeroSection(profileConfig, profileData) {
-  const name = (profileConfig.name || 'Developer').toUpperCase();
-  const headline = (profileConfig.headline || 'Software Engineer').toUpperCase();
+export function buildHeroSection(profileConfig) {
+  const name = profileConfig.name || 'Pinak Thummar';
+  const headline = profileConfig.headline || 'Software Engineer';
   const tagline = profileConfig.tagline || 'Build → Learn → Ship → Improve';
-  const bio = profileConfig.bio || '';
+  const bio = profileConfig.bio || 'Intelligence Thrives in isolation.';
 
-  const badges = [];
+  const links = [];
   if (profileConfig.social?.github) {
-    badges.push(`[![GitHub](https://img.shields.io/badge/GitHub-0D1117?style=flat-square&logo=github&logoColor=white)](${profileConfig.social.github})`);
+    links.push(`[GitHub ↗](${profileConfig.social.github})`);
   }
   if (profileConfig.social?.linkedin) {
-    badges.push(`[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](${profileConfig.social.linkedin})`);
+    links.push(`[LinkedIn ↗](${profileConfig.social.linkedin})`);
   }
   if (profileConfig.social?.portfolio) {
-    badges.push(`[![Portfolio](https://img.shields.io/badge/Portfolio-0D1117?style=flat-square&logo=googlechrome&logoColor=white)](${profileConfig.social.portfolio})`);
+    links.push(`[Portfolio ↗](${profileConfig.social.portfolio})`);
   }
   if (profileConfig.social?.email) {
-    badges.push(`[![Email](https://img.shields.io/badge/Email-0D1117?style=flat-square&logo=gmail&logoColor=white)](mailto:${profileConfig.social.email})`);
+    links.push(`[Email ↗](mailto:${profileConfig.social.email})`);
   }
 
-  // System status badge
-  badges.push(`![Status](https://img.shields.io/badge/System-ONLINE-161B22?style=flat-square&logo=gnubash&logoColor=white)`);
-
-  const badgesRow = badges.join('&nbsp;&nbsp;');
+  const linksRow = links.join('&nbsp;&nbsp;•&nbsp;&nbsp;');
 
   return `<div align="center">
 
-# \`${name}\`
-### \`PINAK.OS // ${headline}\`
+# ${name}
 
-> **\`${tagline}\`**
+### ${headline}
 
-${bio ? `_${bio}_\n` : ''}
-${badgesRow}
+_${bio}_
+
+<br/>
+
+${linksRow}
 
 </div>
 
@@ -54,109 +48,122 @@ ${badgesRow}
 }
 
 /**
- * 2. Main Neofetch / System Info Terminal Card
+ * 2. Overview / Capabilities (3-Column Minimalist Grid)
  */
-export function buildNeofetchTerminalSection(profileConfig, profileData, totalWidth = 72) {
-  const sys = profileConfig.systemInfo || {};
-  const sysHeader = profileConfig.systemName || `${(profileConfig.username || 'user').toLowerCase()}@host`;
-  const dashesCount = Math.max(2, totalWidth - sysHeader.length - 1);
-  const headerLine = `${sysHeader} ${'-'.repeat(dashesCount)}`;
+export function buildCapabilitiesSection(profileConfig) {
+  return `### Architecture & Focus
 
-  const lines = [headerLine];
-
-  // OS & System Info
-  lines.push(renderDottedLine('OS', sys.os || 'Windows 11, Linux', totalWidth));
-  lines.push(renderDottedLine('Uptime', sys.uptime || '20 years, 5 months', totalWidth));
-  lines.push(renderDottedLine('Host', sys.host || 'Software Engineering Lab', totalWidth));
-  lines.push(renderDottedLine('Kernel', sys.kernel || profileConfig.headline || 'Software Engineer', totalWidth));
-  lines.push(renderDottedLine('IDE', sys.ide || 'VS Code, Neovim', totalWidth));
-  lines.push('.');
-
-  // Languages
-  const progLangs = (profileData.languages && profileData.languages.length > 0)
-    ? profileData.languages.map(l => l.language).join(', ')
-    : 'JavaScript, TypeScript, Python, C++';
-  lines.push(renderDottedLine('Languages.Programming', progLangs, totalWidth));
-  if (sys.languagesComputer) {
-    lines.push(renderDottedLine('Languages.Computer', sys.languagesComputer, totalWidth));
-  }
-  if (sys.languagesReal) {
-    lines.push(renderDottedLine('Languages.Real', sys.languagesReal, totalWidth));
-  }
-  lines.push('.');
-
-  // Focus & Hobbies
-  const primaryFocus = profileConfig.interests?.slice(0, 2).join(', ') || 'Backend Engineering, System Design';
-  const currentLearning = profileConfig.currentlyLearning?.join(', ') || 'Machine Learning, System Design';
-  lines.push(renderDottedLine('Focus.Primary', primaryFocus, totalWidth));
-  lines.push(renderDottedLine('Focus.Exploring', currentLearning, totalWidth));
-  if (sys.hobbiesSoftware) {
-    lines.push(renderDottedLine('Hobbies.Software', sys.hobbiesSoftware, totalWidth));
-  }
-  if (sys.hobbiesHardware) {
-    lines.push(renderDottedLine('Hobbies.Hardware', sys.hobbiesHardware, totalWidth));
-  }
-
-  // Contact
-  lines.push(renderSectionDivider('Contact', totalWidth));
-  if (profileConfig.social?.email) {
-    lines.push(renderDottedLine('Email.Personal', profileConfig.social.email, totalWidth));
-  }
-  if (profileConfig.social?.linkedin) {
-    const handle = profileConfig.social.linkedin.replace(/^https?:\/\/(www\.)?linkedin\.com\/in\//, '').replace(/\/$/, '');
-    lines.push(renderDottedLine('LinkedIn', handle, totalWidth));
-  }
-  if (profileConfig.social?.github || profileConfig.username) {
-    const gh = profileConfig.username || profileConfig.social?.github;
-    lines.push(renderDottedLine('GitHub', gh, totalWidth));
-  }
-  if (profileConfig.social?.portfolio) {
-    const port = profileConfig.social.portfolio.replace(/^https?:\/\//, '').replace(/\/$/, '');
-    lines.push(renderDottedLine('Portfolio', port, totalWidth));
-  }
-
-  // GitHub Stats
-  const tel = profileData.telemetry || {};
-  lines.push(renderSectionDivider('GitHub Stats', totalWidth));
-
-  const reposVal = `${tel.publicRepositories ?? 0} {Contributed: ${tel.originalProjects ?? 0}}`;
-  const starsVal = `${tel.totalStars ?? 0}`;
-  lines.push(renderDualDottedLine('Repos', reposVal, 'Stars', starsVal, totalWidth));
-
-  const commitsVal = `${tel.recentCommits ?? 0}`;
-  const followersVal = `${tel.followers ?? 0}`;
-  lines.push(renderDualDottedLine('Commits', commitsVal, 'Followers', followersVal, totalWidth));
-
-  const langsCount = `${tel.languages ?? 2}`;
-  const activeCount = `${tel.activeProjects ?? 0}`;
-  lines.push(renderDualDottedLine('Languages', langsCount, 'Active Repos (90d)', activeCount, totalWidth));
-
-  return `\`\`\`text
-${lines.join('\n')}
-\`\`\``;
+<table>
+  <tr>
+    <td width="33%" align="left" valign="top">
+      <h4>Backend & Systems</h4>
+      <p>Architecting scalable server-side systems, RESTful APIs, and distributed database models.</p>
+    </td>
+    <td width="33%" align="left" valign="top">
+      <h4>Machine Learning</h4>
+      <p>Exploring intelligent architectures, applied machine learning, and data pipelines.</p>
+    </td>
+    <td width="33%" align="left" valign="top">
+      <h4>Automation & Tooling</h4>
+      <p>Building automated CI/CD workflows, developer tools, and telemetry engines.</p>
+    </td>
+  </tr>
+</table>`;
 }
 
 /**
- * 3. Recent Activity Section
+ * 3. Ecosystem & Tech Stack
+ */
+export function buildTechStackSection(profileData) {
+  const defaultStack = ['TypeScript', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'React', 'Git', 'Docker'];
+  const detectedLangs = profileData.languages?.map(l => l.language) || [];
+  const combined = Array.from(new Set([...detectedLangs, ...defaultStack]));
+
+  const pills = combined.map(tech => `\`${tech}\``).join(' &nbsp; ');
+
+  return `### Ecosystem & Stack
+
+${pills}`;
+}
+
+/**
+ * 4. Telemetry Metrics (Apple Clean KPI Cards)
+ */
+export function buildTelemetrySection(telemetry) {
+  const publicRepos = telemetry.publicRepositories ?? 0;
+  const originalProjects = telemetry.originalProjects ?? 0;
+  const followers = telemetry.followers ?? 0;
+  const recentCommits = telemetry.recentCommits ?? 0;
+
+  return `### Developer Telemetry
+
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <sub>PUBLIC REPOSITORIES</sub><br/>
+      <h2>${publicRepos}</h2>
+      <sub>${originalProjects} Original</sub>
+    </td>
+    <td align="center" width="25%">
+      <sub>FOLLOWERS</sub><br/>
+      <h2>${followers}</h2>
+      <sub>Network</sub>
+    </td>
+    <td align="center" width="25%">
+      <sub>RECENT COMMITS</sub><br/>
+      <h2>${recentCommits}</h2>
+      <sub>Event Velocity</sub>
+    </td>
+    <td align="center" width="25%">
+      <sub>SYSTEM STATUS</sub><br/>
+      <h2>Online</h2>
+      <sub>Automated Sync</sub>
+    </td>
+  </tr>
+</table>`;
+}
+
+/**
+ * 5. Current Focus / Mission
+ */
+export function buildCurrentMissionSection(profileConfig) {
+  const learning = profileConfig.currentlyLearning || [];
+  const building = profileConfig.currentlyBuilding || [];
+  const mission = profileConfig.currentMission || 'Better than yesterday';
+
+  const lines = [];
+  lines.push(`- **Mission**: ${mission}`);
+  if (learning.length > 0) {
+    lines.push(`- **Exploring**: ${learning.join(', ')}`);
+  }
+  if (building.length > 0) {
+    lines.push(`- **Building**: ${building.join(', ')}`);
+  }
+
+  return `### Current Trajectory
+
+${lines.join('\n')}`;
+}
+
+/**
+ * 6. Recent Engineering Activity
  */
 export function buildRecentActivitySection(activities = []) {
   if (!activities || activities.length === 0) {
     return '';
   }
 
-  const lines = activities.slice(0, 5).map(act => {
-    return `* [ ${act.repository} ] ${act.timeAgo} — ${act.summary}`;
+  const items = activities.slice(0, 5).map(act => {
+    return `- **${act.repository}** — ${act.summary} _(${act.timeAgo})_`;
   });
 
-  return `### \`[ RECENT ACTIVITY ]\`
+  return `### Recent Activity
 
-\`\`\`text
-${lines.join('\n')}
-\`\`\``;
+${items.join('\n')}`;
 }
 
 /**
- * 4. Footer Section
+ * 7. Footer
  */
 export function buildFooterSection() {
   const timestamp = formatUtcDateTime();
@@ -164,13 +171,6 @@ export function buildFooterSection() {
   return `---
 
 <div align="center">
-
-\`\`\`text
-────────────────────────────────────────────────────────────────────────────
-PINAK.OS // AUTOMATED DEVELOPER TELEMETRY ENGINE
-SYSTEM STATUS: ONLINE  |  NODE.JS v20  |  LAST SYNC: ${timestamp}
-────────────────────────────────────────────────────────────────────────────
-\`\`\`
-
+  <sub>Designed with precision. Automatically updated via GitHub Actions • ${timestamp}</sub>
 </div>`;
 }

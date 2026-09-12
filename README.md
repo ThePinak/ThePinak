@@ -2,67 +2,88 @@
 
 <div align="center">
 
-# `PINAK THUMMAR`
-### `PINAK.OS // SOFTWARE ENGINEER IN PROGRESS`
+# Pinak Thummar
 
-> **`Build → Learn → Ship → Improve`**
+### Software Engineer in Progress
 
 _Intelligence Thrives in isolation._
 
-[![GitHub](https://img.shields.io/badge/GitHub-0D1117?style=flat-square&logo=github&logoColor=white)](https://github.com/ThePinak)&nbsp;&nbsp;[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/pinakthummar)&nbsp;&nbsp;[![Portfolio](https://img.shields.io/badge/Portfolio-0D1117?style=flat-square&logo=googlechrome&logoColor=white)](https://pinakthummar.dev)&nbsp;&nbsp;[![Email](https://img.shields.io/badge/Email-0D1117?style=flat-square&logo=gmail&logoColor=white)](mailto:pinakthummar@example.com)&nbsp;&nbsp;![Status](https://img.shields.io/badge/System-ONLINE-161B22?style=flat-square&logo=gnubash&logoColor=white)
+<br/>
+
+[GitHub ↗](https://github.com/ThePinak)&nbsp;&nbsp;•&nbsp;&nbsp;[LinkedIn ↗](https://linkedin.com/in/pinakthummar)&nbsp;&nbsp;•&nbsp;&nbsp;[Portfolio ↗](https://pinakthummar.dev)&nbsp;&nbsp;•&nbsp;&nbsp;[Email ↗](mailto:pinakthummar@example.com)
 
 </div>
 
 ---
 
-```text
-pinak@os -----------------------------------------------------------------
-. OS: ....................................... Windows 11, Linux, Android 14
-. Uptime: .............................................. 20 years, 5 months
-. Host: .......................................... Software Engineering Lab
-. Kernel: ................................... Software Engineer in Progress
-. IDE: .................................................... VS Code, Neovim
-.
-. Languages.Programming: ........................... JavaScript, TypeScript
-. Languages.Computer: ................... HTML, CSS, JSON, LaTeX, YAML, SQL
-. Languages.Real: ................................ English, Gujarati, Hindi
-.
-. Focus.Primary: .................... Software Engineering, Backend Systems
-. Focus.Exploring: ... System Design, Backend Engineering, Machine Learning
-. Hobbies.Software: ................. Building Developer Tools, Open Source
-. Hobbies.Hardware: ............................ Electronics, System Tuning
-- Contact ----------------------------------------------------------------
-. Email.Personal: ................................ pinakthummar@example.com
-. LinkedIn: .................................................. pinakthummar
-. GitHub: ........................................................ ThePinak
-. Portfolio: ............................................. pinakthummar.dev
-- GitHub Stats -----------------------------------------------------------
-. Repos: ........ 9 {Contributed: 9} | Stars: .......................... 3
-. Commits: ...................... 23 | Followers: ..................... 20
-. Languages: ..................... 2 | Active Repos (90d): ............. 3
-```
+### Architecture & Focus
 
-### `[ RECENT ACTIVITY ]`
+<table>
+  <tr>
+    <td width="33%" align="left" valign="top">
+      <h4>Backend & Systems</h4>
+      <p>Architecting scalable server-side systems, RESTful APIs, and distributed database models.</p>
+    </td>
+    <td width="33%" align="left" valign="top">
+      <h4>Machine Learning</h4>
+      <p>Exploring intelligent architectures, applied machine learning, and data pipelines.</p>
+    </td>
+    <td width="33%" align="left" valign="top">
+      <h4>Automation & Tooling</h4>
+      <p>Building automated CI/CD workflows, developer tools, and telemetry engines.</p>
+    </td>
+  </tr>
+</table>
 
-```text
-* [ ThePinak ] 1h ago — Updated codebase
-* [ OdooXLDCE2026Hackathon ] 20 days ago — Updated codebase
-* [ OdooXLDCE2026Hackathon ] 20 days ago — Merged PR: Pull Request
-* [ OdooXLDCE2026Hackathon ] 20 days ago — Updated codebase
-* [ OdooXLDCE2026Hackathon ] 20 days ago — Opened PR: Pull Request
-```
+### Ecosystem & Stack
+
+`JavaScript` &nbsp; `TypeScript` &nbsp; `Node.js` &nbsp; `Python` &nbsp; `PostgreSQL` &nbsp; `MongoDB` &nbsp; `React` &nbsp; `Git` &nbsp; `Docker`
+
+### Developer Telemetry
+
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <sub>PUBLIC REPOSITORIES</sub><br/>
+      <h2>9</h2>
+      <sub>9 Original</sub>
+    </td>
+    <td align="center" width="25%">
+      <sub>FOLLOWERS</sub><br/>
+      <h2>20</h2>
+      <sub>Network</sub>
+    </td>
+    <td align="center" width="25%">
+      <sub>RECENT COMMITS</sub><br/>
+      <h2>23</h2>
+      <sub>Event Velocity</sub>
+    </td>
+    <td align="center" width="25%">
+      <sub>SYSTEM STATUS</sub><br/>
+      <h2>Online</h2>
+      <sub>Automated Sync</sub>
+    </td>
+  </tr>
+</table>
+
+### Current Trajectory
+
+- **Mission**: BETTER THAN YESTERDAY
+- **Exploring**: System Design, Backend Engineering, Machine Learning
+- **Building**: PINAK.OS, DBMS Normalization
+
+### Recent Activity
+
+- **ThePinak** — Updated codebase _(1h ago)_
+- **OdooXLDCE2026Hackathon** — Updated codebase _(20 days ago)_
+- **OdooXLDCE2026Hackathon** — Merged PR: Pull Request _(20 days ago)_
+- **OdooXLDCE2026Hackathon** — Updated codebase _(20 days ago)_
+- **OdooXLDCE2026Hackathon** — Opened PR: Pull Request _(20 days ago)_
 
 ---
 
 <div align="center">
-
-```text
-────────────────────────────────────────────────────────────────────────────
-PINAK.OS // AUTOMATED DEVELOPER TELEMETRY ENGINE
-SYSTEM STATUS: ONLINE  |  NODE.JS v20  |  LAST SYNC: 2026-09-12 06:35 UTC
-────────────────────────────────────────────────────────────────────────────
-```
-
+  <sub>Designed with precision. Automatically updated via GitHub Actions • 2026-09-12 06:45 UTC</sub>
 </div>
 
 <!-- PINAK_OS_END -->

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T06:27:25.199Z",
+  "generatedAt": "2026-09-12T05:49:26.297Z",
   "profile": {
     "username": "ThePinak",
     "name": "Pinak Thummar",
@@ -26,8 +26,8 @@
   "dna": [
     {
       "category": "Backend",
-      "count": 7,
-      "percentage": 58
+      "count": 8,
+      "percentage": 67
     },
     {
       "category": "AI/ML",
@@ -43,23 +43,18 @@
       "category": "Databases",
       "count": 1,
       "percentage": 8
-    },
-    {
-      "category": "Developer Tools",
-      "count": 1,
-      "percentage": 8
     }
   ],
   "languages": [
     {
       "language": "JavaScript",
-      "count": 6,
-      "percentage": 86
+      "count": 7,
+      "percentage": 88
     },
     {
       "language": "TypeScript",
       "count": 1,
-      "percentage": 14
+      "percentage": 13
     }
   ],
   "featuredProjects": [
@@ -101,7 +96,7 @@
       ],
       "stars": 0,
       "forks": 0,
-      "updatedAt": "2026-09-12T05:04:45Z",
+      "updatedAt": "2026-09-12T05:45:55Z",
       "repoUrl": "https://github.com/ThePinak/ThePinak",
       "liveUrl": ""
     },
@@ -152,7 +147,11 @@
     {
       "summary": "Updated codebase",
       "repository": "ThePinak",
+<<<<<<< HEAD
       "timeAgo": "1h ago",
+=======
+      "timeAgo": "44m ago",
+>>>>>>> 7d22d1fd48cb3c146549580466ed4a5583f5af85
       "date": "2026-09-12T05:04:45Z",
       "type": "Push"
     },

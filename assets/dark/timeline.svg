@@ -5,7 +5,7 @@
     @keyframes draw { to { stroke-dashoffset: 0; } }
     .m { opacity: 0; animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
     @keyframes rise { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
-    .m1{animation-delay:.4s}.m2{animation-delay:.9s}.m3{animation-delay:1.4s}.m4{animation-delay:1.8s}.m5{animation-delay:2.2s}.m6{animation-delay:2.6s}
+    .m1{animation-delay:.4s}.m2{animation-delay:.9s}.m3{animation-delay:.1.4s}.m4{animation-delay:1.8s}.m5{animation-delay:2.2s}.m6{animation-delay:2.6s}
     .pulse { animation: pulse 2.6s ease-in-out infinite; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
     .ring { animation: ring 2.6s ease-out infinite; transform-origin: 1040px 125px; }

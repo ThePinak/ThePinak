@@ -22,7 +22,12 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/github-stats.svg"/><img src="assets/github-stats.svg" width="97%" alt="GitHub statistics and repository languages"/></picture>
 
+<!-- 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=ThePinak&amp;bg_color=00000000&amp;color=ffffff&amp;line=ffffff&amp;point=ffffff&amp;area_color=ffffff&amp;area=true&amp;hide_border=true&amp;radius=0&amp;custom_title=CONTRIBUTION%20TELEMETRY"/><img src="https://github-readme-activity-graph.vercel.app/graph?username=ThePinak&amp;bg_color=00000000&amp;color=000000&amp;line=000000&amp;point=000000&amp;area_color=000000&amp;area=true&amp;hide_border=true&amp;radius=0&amp;custom_title=CONTRIBUTION%20TELEMETRY" width="97%" alt="GitHub contribution activity"/></picture>
+This is a 
+multi-line comment
+-->
+
 
 </div>
 

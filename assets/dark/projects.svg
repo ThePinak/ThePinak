@@ -34,7 +34,7 @@
       <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
     </g>
     <g class="row r4" transform="translate(0 330)">
-      <text class="title" x="48" y="24">04 / PINAK.OS & SYSTEM ARCHITECTURE</text>
+      <text class="title" x="48" y="24">04 / PINAK.OS &amp; SYSTEM ARCHITECTURE</text>
       <text class="copy" x="48" y="49">Personal developer ecosystem combining automation scripts, developer tooling, and telemetry.</text>
       <text class="copy" x="48" y="68">Coordinates CI/CD profile synchronizations, Git workflows, and modular backend endpoints.</text>
       <text class="meta" x="48" y="87">NODE.JS · TYPESCRIPT · GITHUB ACTIONS · AUTOMATION · DEV TOOLS</text>

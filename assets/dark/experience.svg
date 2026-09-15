@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1000 370" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Experience and Milestones - Pinak Thummar">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .rise { opacity: 0; animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes rise { from { opacity:0;transform:translateY(8px); } to { opacity:1;transform:translateY(0); } }
+    .a1{animation-delay:.15s} .a2{animation-delay:.35s} .a3{animation-delay:.55s} .a4{animation-delay:.75s}
+    @media (prefers-reduced-motion: reduce) { .rise { animation: none; opacity: 1; } }
+  </style>
+
+  <line x1="120" y1="10" x2="120" y2="360" stroke="#333333" stroke-width="1"/>
+
+  <g class="rise a1">
+    <text class="mono" x="48" y="42" font-size="12" font-weight="700" fill="#DDDDDD" letter-spacing="2">2026</text>
+    <text class="mono" x="136" y="42" font-size="15" font-weight="600" fill="#FFFFFF">Odoo x LDCE Hackathon 2026 · Project Lead &amp; Full-Stack Builder</text>
+    <text class="mono" x="136" y="68" font-size="13.5" fill="#888888">architected multi-tier web solutions solving practical enterprise logistics &amp; workflows</text>
+    <text class="mono" x="136" y="90" font-size="13.5" fill="#888888">developed responsive TypeScript frontend and robust API services under hackathon deadlines</text>
+  </g>
+
+  <g class="rise a2">
+    <text class="mono" x="48" y="138" font-size="12" font-weight="700" fill="#DDDDDD" letter-spacing="2">2025</text>
+    <text class="mono" x="136" y="138" font-size="15" font-weight="600" fill="#FFFFFF">Open-Source &amp; Distributed Systems Engineering</text>
+    <text class="mono" x="136" y="164" font-size="13.5" fill="#888888">engineered DBMS-Normalization: interactive relational model algorithms and theory tooling</text>
+    <text class="mono" x="136" y="186" font-size="13.5" fill="#888888">built Daily Task Manager Kanban with persistent state, achieving 3★ community stars</text>
+  </g>
+
+  <g class="rise a3">
+    <text class="mono" x="48" y="234" font-size="12" font-weight="700" fill="#DDDDDD" letter-spacing="2">2025</text>
+    <text class="mono" x="136" y="234" font-size="15" font-weight="600" fill="#FFFFFF">Full-Stack Web Architectures &amp; UI Systems</text>
+    <text class="mono" x="136" y="260" font-size="13.5" fill="#888888">designed Trip Frontend and BMS management suite with modular state &amp; microservices</text>
+    <text class="mono" x="136" y="282" font-size="13.5" fill="#888888">deployed live serverless applications on Vercel with automated CI/CD checks</text>
+  </g>
+
+  <g class="rise a4">
+    <text class="mono" x="48" y="330" font-size="12" font-weight="700" fill="#DDDDDD" letter-spacing="2">2024 -</text>
+    <text class="mono" x="136" y="330" font-size="15" font-weight="600" fill="#FFFFFF">Computer Science &amp; Engineering — Systems Track</text>
+    <text class="mono" x="136" y="356" font-size="13.5" fill="#888888">focus on Data Structures, Distributed Systems, Database Internals, and Applied ML</text>
+  </g>
+</svg>

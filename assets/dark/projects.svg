@@ -1,0 +1,58 @@
+<svg viewBox="0 0 1000 700" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Curated Projects by Pinak Thummar">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .title { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; font-size: 13px; font-weight: 700; letter-spacing: 2px; fill: #FFFFFF; }
+    .copy { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; font-size: 11px; fill: #FFFFFF; letter-spacing: 0.2px; }
+    .meta { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; font-size: 9.5px; fill: #888888; letter-spacing: 1.5px; }
+    .rule { stroke: #333333; stroke-width: 1; }
+    .row { opacity: 0; animation: rise .6s cubic-bezier(.2,.7,.2,1) forwards; }
+    .r1{animation-delay:.1s} .r2{animation-delay:.2s} .r3{animation-delay:.3s}
+    .r4{animation-delay:.4s} .r5{animation-delay:.5s} .r6{animation-delay:.6s}
+    @keyframes rise { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+    @media (prefers-reduced-motion: reduce) { .row { animation: none; opacity: 1; } }
+  </style>
+  <g class="mono">
+    <g class="row r1" transform="translate(0 0)">
+      <text class="title" x="48" y="24">01 / DBMS-NORMALIZATION</text>
+      <text class="copy" x="48" y="49">Interactive educational platform designed to master relational database normalization principles.</text>
+      <text class="copy" x="48" y="68">Decomposes schemas across 1NF, 2NF, 3NF and BCNF with functional dependency visual analysis.</text>
+      <text class="meta" x="48" y="87">JAVASCRIPT · REACT · ALGORITHMS · DATABASE DESIGN · VERCEL DEPLOYED</text>
+      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    </g>
+    <g class="row r2" transform="translate(0 110)">
+      <text class="title" x="48" y="24">02 / DAILY-TASK-MANAGER-KANBAN</text>
+      <text class="copy" x="48" y="49">Full-featured keyboard and drag-and-drop productivity kanban board for agile task management.</text>
+      <text class="copy" x="48" y="68">Includes local state persistence, priority tagging, categorization filters, and fluid UX.</text>
+      <text class="meta" x="48" y="87">JAVASCRIPT · REACT · STATE MANAGEMENT · PRODUCTIVITY · 3★ STARS</text>
+      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    </g>
+    <g class="row r3" transform="translate(0 220)">
+      <text class="title" x="48" y="24">03 / ODOO X LDCE HACKATHON 2026</text>
+      <text class="copy" x="48" y="49">Rapid prototype built for the Odoo x LDCE Hackathon 2026 solving real-world enterprise bottlenecks.</text>
+      <text class="copy" x="48" y="68">Integrated TypeScript frontend and backend modules with collaborative workflow pipeline.</text>
+      <text class="meta" x="48" y="87">TYPESCRIPT · REACT · NODE.JS · HACKATHON 2026 · TEAM COLLABORATION</text>
+      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    </g>
+    <g class="row r4" transform="translate(0 330)">
+      <text class="title" x="48" y="24">04 / PINAK.OS & SYSTEM ARCHITECTURE</text>
+      <text class="copy" x="48" y="49">Personal developer ecosystem combining automation scripts, developer tooling, and telemetry.</text>
+      <text class="copy" x="48" y="68">Coordinates CI/CD profile synchronizations, Git workflows, and modular backend endpoints.</text>
+      <text class="meta" x="48" y="87">NODE.JS · TYPESCRIPT · GITHUB ACTIONS · AUTOMATION · DEV TOOLS</text>
+      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    </g>
+    <g class="row r5" transform="translate(0 440)">
+      <text class="title" x="48" y="24">05 / BMS — BUSINESS MANAGEMENT SUITE</text>
+      <text class="copy" x="48" y="49">Comprehensive business management system designed for modular inventory and operation workflows.</text>
+      <text class="copy" x="48" y="68">Engineered with RESTful APIs, data validation schemas, and structured database models.</text>
+      <text class="meta" x="48" y="87">JAVASCRIPT · NODE.JS · EXPRESS · MONGODB · REST APIS</text>
+      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    </g>
+    <g class="row r6" transform="translate(0 550)">
+      <text class="title" x="48" y="24">06 / TRIP-FRONTEND</text>
+      <text class="copy" x="48" y="49">Modern travel and itinerary planning web interface offering interactive destination discovery.</text>
+      <text class="copy" x="48" y="68">Features responsive layouts, dynamic route previews, and intuitive booking components.</text>
+      <text class="meta" x="48" y="87">JAVASCRIPT · REACT · CSS3 · VERCEL · INTERACTION DESIGN</text>
+      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    </g>
+  </g>
+</svg>
